@@ -1,0 +1,23 @@
+<header>
+    <div>
+        <span class="logo-1">The</span>
+        <span class="logo-2">Dev</span>
+        <span class="logo-3">Blog</span>
+    </div>
+</header>
+
+<main *ngIf="blogPosts$ | async as blogPosts">
+    <!-- <pre>
+        {{ blogPosts | json}}
+    </pre> -->
+
+    <div class="blog-post-container" *ngFor="let blogPost of blogPosts.items">
+        <h1>{{blogPost.fields.title}}</h1>
+        <img [src]="blogPost.fields.featuredImage.fields.file.url" alt="">
+        <p class="author">{{blogPost.fields.author}}</p>
+        <p class="content">{{blogPost.fields.content}}</p>
+        <a href="#">Read More..</a>
+
+    </div>
+
+</main>
