@@ -15,9 +15,11 @@
         <h1>{{blogPost.fields.title}}</h1>
         <img [src]="blogPost.fields.featuredImage.fields.file.url" alt="">
         <p class="author">{{blogPost.fields.author}}</p>
-        <p class="content">{{blogPost.fields.content}}</p>
+        <div [innerHtml]="blogPost.fields.content | toHtml"></div>
         <a href="#">Read More..</a>
 
+
     </div>
+
 
 </main>
